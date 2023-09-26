@@ -1,0 +1,16 @@
+{
+  "name": "poolcall",
+  "version": "1.0.0",
+  "description": "Вызывает callback функцию поистечение времени после вызова метода start(). ",
+  "main": "poolcall.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "browser"
+  ],
+  "author": "DIMKL",
+  "license": "ISC"
+}
