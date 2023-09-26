@@ -1,12 +1,12 @@
 //`
 //`var wait = {
-//`	ms: 100, 
+//`	ms: 100,
 //`	pass: 5,
 //`	state: "done" /*done/wait*/,
 //`	start(...arg)/*callin this.startf*/{
 //`		this.curPass  = this.pass;
 //`		try{this.startf(...arg)} catch(e){};
-//`		
+//`
 //`		if (this.state == "done"){
 //`			this.state = "wait";
 //`			this.wait(this.wait.bind(this), this);
@@ -35,10 +35,10 @@
 /**
  * Входные опции для конструктора
  * @typedef {Object} PoolCall~opt
- * @property {Number} [ms=100] - милесекунды между проходами 
+ * @property {Number} [ms=100] - милесекунды между проходами
  * @property {Number} [pass=5] - число проходов
  * @property {Function} [startf] - фунция которая будет вызвана при вызове функции PoolCall#start
- * 
+ *
  */
 
 
@@ -48,42 +48,57 @@
 /*
  * @constructor
  * @class
- * @param {endCallback} cb - функция которая будет вызвана в конце 
+ * @param {endCallback} cb - функция которая будет вызвана в конце
  * @param {PoolCall~opt} opt  - дополнительные опции определяющие поведение экземпляра
  * @property {string} [state="done"|"wait"] - состояние экземпляра:
  * "wait" - проходы ещё не  завершились
  * "done" - все проходы завершены
- * @description - вызывает функуию обратного вызова(cb) по имтечение времени после вызова метода PoolCall#start. Вызов PoolCall#start возвращает счётчик в исходное состояние 
+ * @description - вызывает функуию обратного вызова(cb) по имтечение времени после вызова метода PoolCall#start. Вызов PoolCall#start возвращает счётчик в исходное состояние
  */
-function PoolCall(cb, opt={}){
-var ms = opt.ms || 100;
-var pass = opt.pass || 5 ;
+function PoolCall(cb, opt={}, pdeb = false){
+var ms;
+var pass;
+var _state;
 var _this = this;
-var _state = "done";
-this.state = () => {return _state};
+	let _init = ()=>{
+		 ms = opt.ms || 100;
+		 pass = opt.pass || 5 ;
+		 _state = "done";
 
+	};
+	_init();
+
+this._cb = cb;
+this.state = () => {return _state};
+function debf(pmsg){if (pdeb){console.debug(pmsg)}};
 var currpass;
 
 var _start = function(...args) {
-	
+	debf('PoolCall: Start');
 	currpass = pass;
 	try {opt.startf(...args)} catch(e){};
 	if (_state == "done"){
 		_state = "wait";
+		debf('PoolCall: ready to call of _wait');
 		_wait();
 	}
 
 
 };
+
 this.start = _start;
 var _wait = () =>{
+	debf('PoolCall: called _wait');
 	if (pass-- > 0) {
-		console.log(pass > 0);
+		//console.log(pass > 0);
+		debf('PoolCall: will call _wait');
 		setTimeout(_wait, ms)
 	} else {
+		debf('PoolCall: end of  wait');
 		this.state = "done";
-		console.log("OOps");
-		try {cb()} catch(e){};
+		//console.log("OOps");
+		_init();
+		try {debf('PoolCall: calling cb');cb()} catch(e){debf('PoolCall: cb not call '); console.debug(cb);};
 	};
 };
 
@@ -94,17 +109,22 @@ var _wait = () =>{
 /**
  * функция обратного вызова для PoolCall
  * @callback endCallback
- *  
+ *
  */
 module.exports.PoolCall = PoolCall;
 //
 //var opt =	{startf(val){console.log(val)}};
 //
+//let ind = 5;
 //function cb () {
-//	console.log("Haribol")
+//	console.log("Haribol", ind);
+//	ind = ind - 1;
+//	if (ind > 0) {
+//		//debugger;
+//		wait.start()}
 //}
-//let wait = new PoolCall(cb,	opt );
-////wait.start();
+//let wait = new PoolCall(cb/*,	opt*/ ,{} ,true);
+//wait.start();
 //st = wait.start.bind(wait);
 //st("Start one");
 //setTimeout(st, 300, "start two");
