@@ -1,6 +1,6 @@
 {
-  "name": "poolcall",
-  "version": "1.0.1",
+  "name": "@dimkl-dev/poolcall",
+  "version": "1.0.0",
   "description": "Вызывает callback функцию поистечение времени после вызова метода start(). ",
   "main": "poolcall.js",
   "scripts": {
@@ -9,8 +9,19 @@
   "keywords": [
     "js",
     "node",
-    "browser"
+    "browser",
+    "setTimeout",
+    "time"
   ],
   "author": "DIMKL",
-  "license": "ISC"
+  "license": "GPL-3.0-or-later",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimkl-dev/poolcall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dimkl-dev/poolcall/issues"
+  },
+  "homepage": "https://github.com/dimkl-dev/poolcall#readme"
 }
