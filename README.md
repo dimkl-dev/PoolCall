@@ -14,7 +14,7 @@
 
 ## Использование
 
-    let {PoolCall} = require('@dimkl-dev/poolcall');
+    let {PoolCall} = require('dimkl-dev_poolcall"');
     let cb = ()={console.log('i`m called')};
     let wait = new PoolCall(cb);
     wait.start();
@@ -22,6 +22,6 @@
 
 ## Документация
 Документация доступна по ссылке ниже.<br>
-[PoolCall документация](./docs/index.html)
+<a href="file://./docs/index.html">PoolCall документация</a>
 
 

@@ -1,5 +1,5 @@
 {
-  "name": "@dimkl-dev/poolcall",
+  "name": "dimkl-dev_poolcall",
   "version": "1.0.2",
   "description": "Вызывает callback функцию поистечение времени после вызова метода start(). ",
   "main": "poolcall.js",
