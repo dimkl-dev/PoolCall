@@ -22,7 +22,7 @@
 
 ## Документация
 Документация доступна по ссылке ниже.<br>
-<a href="https://htmlbook.ru/samhtml/yakorya">PoolCall документация</a>
+<a href="./docs/index.html">PoolCall документация</a>
 <!--
 ./docs/index.html
 https://htmlbook.ru/samhtml/yakorya
