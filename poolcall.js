@@ -66,6 +66,7 @@
  * @jsmd # WOW
  * @param {endCallback} cb - функция которая будет вызвана в конце
  * @param {PoolCall~opt} opt  - дополнительные опции определяющие поведение экземпляра
+ * @param {Boolean} [pdeb=false] - если передаётся true - то будет выводится отладочная информация
 
  * @description Вызывает функуию обратного вызова (**cb**) не раньше, чем после последнего вызова 
  *  {@link PoolCall#start}, пройдут заданые участки времени. Вызов {@link PoolCall#start},
@@ -162,6 +163,7 @@ var _wait = () =>{
 
 
 module.exports.PoolCall = PoolCall;
+module.exports.poolcall = PoolCall;
 //
 //var opt =	{startf(val){console.log(val)}};
 //

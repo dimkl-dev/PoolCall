@@ -10,6 +10,16 @@
 Так пакет **PoolCall** является пакетом nodejs - то вам для установки понадобится менеджер пакетов, к примеру **npm**.
 
     npm install @dimkl-dev/poolcall
+
+
+## Использование
+
+    let {PoolCall} = require('@dimkl-dev/poolcall');
+    let cb = ()={console.log('i`m called')};
+    let wait = new PoolCall(cb);
+    wait.start();
+
+
 ## Документация
 Документация доступна по ссылке ниже.<br>
 [PoolCall документация](./docs/index.html)
