@@ -9,7 +9,7 @@
 ## Установка
 Так пакет **PoolCall** является пакетом nodejs - то вам для установки понадобится менеджер пакетов, к примеру **npm**.
 
-    npm install @dimkl-dev/poolcall
+    npm install poolcall
 
 
 ## Использование
