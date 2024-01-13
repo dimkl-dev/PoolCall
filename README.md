@@ -22,6 +22,6 @@
 
 ## Документация
 Документация доступна по ссылке ниже.<br>
-<a href="file://./docs/index.html">PoolCall документация</a>
+<a href="file:///docs/index.html">PoolCall документация</a>
 
 
