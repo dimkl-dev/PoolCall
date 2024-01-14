@@ -21,7 +21,10 @@
 
 
 ## Документация
-Документация доступна по ссылке ниже.<br>
+Для просмотра документации в каталоге пакета наберите команду 
+
+    cd ./node_modules/poolcall/ && npm run docs
+
 <a href="./docs/index.html">PoolCall документация</a>
 <!--
 ./docs/index.html

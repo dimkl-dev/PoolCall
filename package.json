@@ -1,10 +1,10 @@
 {
   "name": "poolcall",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "description": "Вызывает callback функцию поистечение времени после вызова метода start(). ",
   "main": "poolcall.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "npx jsdoclive ./"
   },
   "keywords": [ 
     "node",
@@ -14,6 +14,9 @@
   ],
   "author": "DIMKL",
   "license": "GPL-3.0-or-later",
+  "Dependencies": {
+    "jsdoclive": "latest"
+  },
 
   "repository": {
     "type": "git",
