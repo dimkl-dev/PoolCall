@@ -28,17 +28,19 @@
 
 
 ## Документация
+Для просмотра документации используйте пакет [JSDocLive](https://www.npmjs.com/package/jsdoclive)
 
 Для просмотра документации пакета установленного как зависимость -  в каталоге пакета наберите команду 
 
-    cd ./node_modules/poolcall/ && npm run docs
+    cd ./node_modules/poolcall/ && jsdoclive ./
 
 Если вы скачали git-репозиторий пакета наберите 
 
-    npm run docs
+    jsdoclive ./
 
-<a href="./docs/index.html">PoolCall документация</a>
 <!--
+<a href="./docs/index.html">PoolCall документация</a>
+
 ./docs/index.html
 https://htmlbook.ru/samhtml/yakorya
 -->
